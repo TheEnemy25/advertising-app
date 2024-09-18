@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Main from "./page/Main";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+      <Footer />
+      {/* <h1 className="text-3xl font-roboto font-bold italic">
+        Roboto Bold 700 Italic
+      </h1>
+      <h1 className="text-3xl font-roboto font-black">Roboto Black 900</h1>
+      <h1 className="text-3xl font-inter font-normal">Inter Regular 400</h1>
+      <h1 className="text-3xl font-inter font-bold">Inter Bold 700</h1> */}
+    </Router>
   );
 }
 
